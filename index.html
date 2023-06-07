@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <style>
+        /* CSS code from the previous example */
+        /* Add CSS for smooth scrolling and gradient background */
+        /* CSS for the navbar and other elements added */
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            background: linear-gradient(to right, #f8f9fa, #D9BBF9);
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .navbar-toggler {
+            z-index: 1;
+        }
+
+        .navbar-nav .nav-link {
+            color: #D9BBF9;
+        }
+
+        .jumbotron {
+            background-color: #D9BBF9;
+            color: #fff;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .section-padding {
+            padding: 50px 0;
+        }
+
+        #about, #services, #testimonials, #contact {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .social-links a {
+            font-size: 2rem;
+            margin: 0 1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Your Website</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header id="home" class="jumbotron jumbotron-fluid section-padding">
+        <div class="container text-center">
+            <h1 class="display-4">Welcome to Our Website</h1>
+            <p class="lead">We provide high quality digital marketing services.</p>
+            <a href="#contact" class="btn btn-primary">Contact Us</a>
+        </div>
+    </header>
+    <section id="about" class="section-padding">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>We are a professional digital marketing agency specialized in social media marketing and content creation.</p>
+        </div>
+    </section>
+    <section id="services" class="section-padding">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Social Media Marketing</h3>
+                    <p>We manage your social media accounts, increase your online presence and customer engagement.</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Content Creation</h3>
+                    <p>We create high-quality content for your digital platforms to attract and retain customers.</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Brand Promotion</h3>
+                    <p>We help promote your brand effectively to increase visibility, engagement and conversion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="testimonials" class="section-padding bg-light">
+        <div class="container">
+            <h2>Testimonials</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="testimonial">
+                        <p>"They increased our brand's online presence significantly."</p>
+                        <p>- Happy Customer</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="testimonial">
+                        <p>"We saw a huge boost in customer engagement after using their services."</p>
+                        <p>- Satisfied Client</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Get in touch with us for high quality digital marketing services.</p>
+            <a href="mailto:info@yourwebsite.com" class="btn btn-secondary">Email Us</a>
+            <a href="https://wa.me/1234567890" class="btn btn-success">WhatsApp Us</a>
+        </div>
+    </section>
+    <footer class="footer py-4">
+        <div class="container text-center">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p>&copy; 2023 Your Website. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // function to handle smooth scrolling to all links
+        $("a").on('click', function (event) {
+            if (this.hash !== "") {
+                event.preventDefault();
+                var hash = this.hash;
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function () {
+                    window.location.hash = hash;
+                });
+            }
+        });
+
+        // function to handle pushing content down when the hamburger menu is opened
+        $('.navbar-toggler').click(function () {
+            if ($('.navbar-toggler').attr('aria-expanded') == 'false') {
+                $('body').css('padding-top', $('.navbar').height() + 10);
+            } else {
+                $('body').css('padding-top', '0');
+            }
+        });
+    </script>
+</body>
+</html>
