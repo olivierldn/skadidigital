@@ -42,7 +42,10 @@
             padding: 50px 0;
         }
 
-        #about, #services, #testimonials, #contact {
+        #about,
+        #services,
+        #testimonials,
+        #contact {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -61,7 +64,8 @@
     <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand" href="#">Your Website</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -158,24 +162,24 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        // function to handle smooth scrolling to all links
-        $(document).ready(function () {
-            $("a").on('click', function (event) {
-                if (this.hash !== "") {
-                    event.preventDefault();
-                    var hash = this.hash;
-                    $('html, body').animate({
-                        scrollTop: $(hash).offset().top
-                    }, 800, function () {
-                        window.location.hash = hash;
-                    });
-                }
-            });
+        // Smooth scrolling functionality using CSS
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
 
-            // function to handle pushing content down when the hamburger menu is opened
-            $('.navbar-toggler').click(function () {
-                $('body').toggleClass('menu-open');
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
+        });
+
+        // Function to handle pushing content down when the hamburger menu is opened
+        $('.navbar-toggler').click(function () {
+            if ($('.navbar-toggler').attr('aria-expanded') == 'false') {
+                $('body').css('padding-top', $('.navbar').height() + 10);
+            } else {
+                $('body').css('padding-top', '0');
+            }
         });
     </script>
 </body>
