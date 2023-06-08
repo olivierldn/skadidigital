@@ -157,5 +157,26 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // function to handle smooth scrolling to all links
+        $(document).ready(function () {
+            $("a").on('click', function (event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+                        window.location.hash = hash;
+                    });
+                }
+            });
+
+            // function to handle pushing content down when the hamburger menu is opened
+            $('.navbar-toggler').click(function () {
+                $('body').toggleClass('menu-open');
+            });
+        });
+    </script>
 </body>
 </html>
